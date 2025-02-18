@@ -77,7 +77,7 @@ export default function Home() {
     <>
       <Navbar />    
 
-      <div className="w-full bg-red-600 text-black text-center py-2 text-sm font-semibold fixed top-[64px] left-0 right-0 z-50">
+      <div className="w-full bg-red-600 text-black text-center py-2 text-sm font-semibold fixed top-[56px] left-0 right-0 z-50">
         Please note, this website is currently under construction.
       </div>
 

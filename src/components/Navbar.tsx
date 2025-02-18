@@ -9,8 +9,6 @@ export default function Navbar() {
         <nav className="bg-white dark:bg-gray-900 fixed w-full z-50 top-0 start-0 border-b border-gray-200 dark:border-gray-600">
             <div className="max-w-screen-xl mx-auto flex flex-wrap items-center justify-between px-4 md:px-8 py-4">
                 
-                <span className="text-2xl font-semibold whitespace-nowrap dark:text-white">Daniel Smith</span>
-
                 <button
                     onClick={() => setIsOpen(!isOpen)}
                     type="button"
