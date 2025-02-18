@@ -1,5 +1,7 @@
 "use client";
-import { useState } from "react"
+import { useState, useEffect } from "react"
+import { motion } from "framer-motion";
+import { useInView } from "react-intersection-observer";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import MainSection from "@/components/MainSection";
@@ -26,7 +28,7 @@ const projects: Project[] = [
       halfTitle: "Portfolio Website",
       halfDescription: "My personal portfolio website to showcase my projects.",
       title: "Portfolio Website",
-      description: "This project was built using Next.js and Tailwind CSS, and is deployed using Vercel. It utilises an interactive UI to showcase a selection of my projects.",
+      description: "This website was built using Next.js and Tailwind CSS, and is deployed using Vercel. It utilises an interactive UI to showcase a selection of my projects.",
       image: "/dsweb.png",
       website1: "https://d-smith.co.uk",
       website1name: "d-smith.co.uk",
@@ -38,7 +40,7 @@ const projects: Project[] = [
       halfTitle: "LCOA Website",
       halfDescription: "A website built for the Largiemore Chalet Owners Association.",
       title: "Largiemore Chalet Owners Association",
-      description: "This project was designed for the Largiemore Chalet Owners Association. It was built using Next.js and Tailwind CSS, and is deployed using AWS Amplify. It contains the main home page, an auth subdomain, and a portal subdomain which contains key information for members.",
+      description: "This website was designed for the Largiemore Chalet Owners Association. It was built using Next.js and Tailwind CSS, and is deployed using AWS Amplify. It contains the main home page, an auth subdomain, and a portal subdomain which contains key information for members.",
       image: "/lcoa.png",
       website1: "https://lcoa.d-smith.co.uk",
       website1name: "lcoa.d-smith.co.uk",
@@ -49,7 +51,7 @@ const projects: Project[] = [
   {
       halfTitle: "ENG1 Websites",
       halfDescription: "Websites built for Assessment 1 and 2 of my Engineering 1 module.",
-      title: "ENG1: Assessment 1 & 2",
+      title: "Engineering 1: Assessment 1 & 2",
       description: "Two websites produced for Assessment 1 and 2 of my Engineering 1 module. The first was designed and built by myself and another group member, the second was taken over from another team and built on to improve flow and add information.",
       image: "/eng1.png",
       website1: "https://uoy-team-six.github.io",
@@ -70,8 +72,50 @@ const projects: Project[] = [
   }
 ];
 
+const skills = [
+  { name: "Python", level: 90 },
+  { name: "Java", level: 75 },
+  { name: "SQL", level: 70 },
+  { name: "CSS", level: 75 },
+  { name: "HTML", level: 80 },
+  { name: "JS", level: 65 },
+  { name: "Next.js", level: 60}
+];
+
+const SkillCircle = ({ name, level, isAnimated }: { name: string; level: number; isAnimated: boolean }) => (
+  <div className="flex flex-col items-center">
+    <div className="relative w-24 h-24">
+      <svg className="w-full h-full rotate-[-90deg]" viewBox="0 0 100 100">
+        <circle className="text-gray-300" strokeWidth="10" stroke="currentColor" fill="transparent" r="40" cx="50" cy="50" />
+        <motion.circle
+          className="text-blue-500"
+          strokeWidth="10"
+          stroke="currentColor"
+          fill="transparent"
+          r="40"
+          cx="50"
+          cy="50"
+          strokeDasharray="251.2"
+          strokeDashoffset={isAnimated ? 251.2 - (251.2 * level) / 100 : 251.2}
+          transition={{ duration: 1.5, ease: 'easeOut' }}
+        />
+      </svg>
+      <span className="absolute inset-0 flex items-center justify-center font-semibold text-lg text-gray-800">{level}%</span>
+    </div>
+    <p className="text-sm font-medium text-gray-700 mt-2">{name}</p>
+  </div>
+);
+
 export default function Home() {
   const [selectedProject, setSelectedProject] = useState<Project | null>(null);
+  const { ref, inView } = useInView({ triggerOnce: true });
+  const [isAnimated, setIsAnimated] = useState(false);
+
+  useEffect( () => {
+    if (inView) {
+      setIsAnimated(true);
+    }
+  }, [inView]);
   
   return (
     <>
@@ -90,8 +134,8 @@ export default function Home() {
           <h4 className="text-lg md:text-2xl font-semibold mt-3">Computer Science Student at the University of York</h4>
 
           <div className="flex gap-x-10 mt-4">
-            <LinkIcons img="/linkedin.svg" alt="LinkedIn Icon" href="https://www.linkedin.com/in/dansmith08/" text="Visit my LinkedIn" showArrow={true} />
-            <LinkIcons img="/github.svg" alt="GitHub Icon" href="https://github.com/dan-08smith" text="Visit my GitHub" showArrow={true}/>
+            <LinkIcons img="/icons/linkedin.svg" alt="LinkedIn Icon" href="https://www.linkedin.com/in/dansmith08/" text="Visit my LinkedIn" showArrow={true} />
+            <LinkIcons img="/icons/github.svg" alt="GitHub Icon" href="https://github.com/dan-08smith" text="Visit my GitHub" showArrow={true}/>
           </div>
 
         </div>
@@ -105,13 +149,20 @@ export default function Home() {
           suspendisse eros elit vitae conubia efficitur suspendisse sollicitudin. Ut elementum venenatis 
           adipiscing suspendisse purus aenean placerat cras.
         </p>
+        <div className="flex justify-center my-6">
+          <LinkIcons img="/icons/file-text.svg" alt="File Icon" href="/public/files/blank.pdf" text="View my CV" showArrow={true}/>
+        </div>
       </MainSection>
 
-      <MainSection id="cv" title="CV & Experience" subtitle="explore my">
-        <LinkIcons img="/file-text.svg" alt="File Icon" href="/blank.pdf" text="View my CV" showArrow={false}/>
+      <MainSection id="skills" title="Skills" subtitle="explore my">
+        <div ref={ref} className="grid grid-cols-2 md:grid-cols-4 gap-8 mt-10">
+          {skills.map((skill) => (
+            <SkillCircle key={skill.name} name={skill.name} level={skill.level} isAnimated={isAnimated} />
+          ))}
+        </div>
       </MainSection>
 
-      <MainSection id="portfolio" title="Portfolio" subtitle="Browse my">
+      <MainSection id="portfolio" title="Portfolio" subtitle="browse my">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mt-6">
           {projects.map((project, index) => (
             <PortfolioCard 
@@ -127,7 +178,7 @@ export default function Home() {
 
       <PortfolioModal project={selectedProject} onClose={() => setSelectedProject(null)} />
 
-      <MainSection id="contact" title="Contact Me" subtitle="Feel free to">
+      <MainSection id="contact" title="Contact Me" subtitle="feel free to">
         <div className="flex flex-col md:flex-row gap-6 mt-6">
                 
           <Link href="mailto:daniel@d-smith.co.uk" target="_blank" className="flex-1">
