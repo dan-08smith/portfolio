@@ -46,7 +46,7 @@ const projects: Project[] = [
       website1name: "lcoa.d-smith.co.uk",
       website2: "https://v1.lcoa.d-smith.co.uk",
       website2name: "v1.lcoa.d-smith.co.uk (Version 1.0)",
-      technologies: ["Next.js", "Tailwind CSS", "AWS Amplify"],
+      technologies: ["Next.js", "Tailwind CSS", "AWS"],
   },
   {
       halfTitle: "ENG1 Websites",
@@ -87,15 +87,8 @@ const SkillCircle = ({ name, level, isAnimated }: { name: string; level: number;
     <div className="relative w-24 h-24">
       <svg className="w-full h-full rotate-[-90deg]" viewBox="0 0 100 100">
         <circle className="text-gray-300" strokeWidth="10" stroke="currentColor" fill="transparent" r="40" cx="50" cy="50" />
-        <motion.circle
-          className="text-blue-500"
-          strokeWidth="10"
-          stroke="currentColor"
-          fill="transparent"
-          r="40"
-          cx="50"
-          cy="50"
-          strokeDasharray="251.2"
+        <motion.circle className="text-blue-500" strokeWidth="10" stroke="currentColor" fill="transparent"
+          r="40" cx="50" cy="50" strokeDasharray="251.2"
           strokeDashoffset={isAnimated ? 251.2 - (251.2 * level) / 100 : 251.2}
           transition={{ duration: 1.5, ease: 'easeOut' }}
         />
@@ -121,10 +114,6 @@ export default function Home() {
     <>
       <Navbar />    
 
-      <div className="w-full bg-red-600 text-black text-center py-2 text-sm font-semibold fixed top-[56px] left-0 right-0 z-50">
-        Please note, this website is currently under construction.
-      </div>
-
       <section id="hero" className="relative h-screen">
         <div className="absolute inset-0 z-40 flex flex-col justify-center items-start 
           text-left text-white bg-black/30 px-10 md:px-20">
@@ -133,7 +122,7 @@ export default function Home() {
           <h1 className="text-5xl md:text-7xl font-medium">Daniel Smith</h1>
           <h4 className="text-lg md:text-2xl font-semibold mt-3">Computer Science Student at the University of York</h4>
 
-          <div className="flex gap-x-10 mt-4">
+          <div className="flex flex-col sm:gap-10 sm:flex-row gap-4 mt-4">
             <LinkIcons img="/icons/linkedin.svg" alt="LinkedIn Icon" href="https://www.linkedin.com/in/dansmith08/" text="Visit my LinkedIn" showArrow={true}/>
             <LinkIcons img="/icons/github.svg" alt="GitHub Icon" href="https://github.com/dan-08smith" text="Visit my GitHub" showArrow={true}/>
           </div>
@@ -143,15 +132,18 @@ export default function Home() {
 
       <MainSection id="about" title="About Me" subtitle="find out more">
         <p>
-          Lorem ipsum odor amet, consectetuer adipiscing elit. Laoreet pulvinar vivamus ipsum metus 
-          a ultrices auctor accumsan. Cras justo eget consectetur scelerisque potenti class cras aenean 
-          purus. Commodo finibus magna massa ante nec commodo; efficitur diam feugiat. Dictumst sodales 
-          suspendisse eros elit vitae conubia efficitur suspendisse sollicitudin. Ut elementum venenatis 
-          adipiscing suspendisse purus aenean placerat cras.
+          Hello! I am Daniel Smith, a second-year Computer Science student at the University of York with a passion 
+          for web development, artificial intelligence, and cyber security.
         </p>
-        <div className="flex justify-center my-6">
-          <LinkIcons img="/icons/file-text.svg" alt="File Icon" href="/public/files/blank.pdf" text="View my CV" showArrow={true}/>
-        </div>
+        <br/>
+        <p>
+          I have experience building websites using frameworks and technologies such as Next.js, Tailwind CSS, AWS, 
+          Vercel, and Firebase. This website showcases some of my recent projects — feel free to explore!
+        </p>
+        <br/>
+        <p className="text-gray-600 font-semibold">My CV is available upon request — don't hesitate to 
+          <Link href="mailto:daniel@d-smith.co.uk" target="_blank" className="hover:underline hover:underline-offset-4"
+          >reach out</Link>!</p>
       </MainSection>
 
       <MainSection id="skills" title="Skills" subtitle="explore my">
@@ -183,7 +175,7 @@ export default function Home() {
                 
           <Link href="mailto:daniel@d-smith.co.uk" target="_blank" className="flex-1">
             <div className="group flex flex-col items-center justify-center p-6 border rounded-lg shadow-md bg-white dark:bg-gray-800 hover:shadow-lg transition">
-              <span className="text-2xl font-medium text-gray-900 dark:text-white">Email Me</span>
+              <span className="text-2xl font-medium text-gray-900 dark:text-white">Email</span>
               <span className="text-gray-500 dark:text-gray-400 group-hover:text-blue-500 transition">daniel@d-smith.co.uk</span>
             </div>
           </Link>
@@ -199,8 +191,6 @@ export default function Home() {
       </MainSection>
 
       <Footer />
-
     </>
-    
   );
 }
