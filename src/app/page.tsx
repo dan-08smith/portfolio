@@ -143,7 +143,7 @@ export default function Home() {
         <br/>
         <p className="text-gray-600 font-semibold">My CV is available upon request — don&apos;t hesitate to 
           <Link href="mailto:daniel@d-smith.co.uk" target="_blank" className="hover:underline hover:underline-offset-4"
-          >reach out</Link>!</p>
+          > reach out</Link>!</p>
       </MainSection>
 
       <MainSection id="skills" title="Skills" subtitle="explore my">
