@@ -13,8 +13,7 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Daniel Smith | Portfolio",
-  description: "Daniel Smith | Portfolio Website | Computer Science Student at the University of York",
+  title: "Daniel Smith | Landing Page",
 };
 
 export default function RootLayout({
