@@ -141,7 +141,7 @@ export default function Home() {
           Vercel, and Firebase. This website showcases some of my recent projects — feel free to explore!
         </p>
         <br/>
-        <p className="text-gray-600 font-semibold">My CV is available upon request — don't hesitate to 
+        <p className="text-gray-600 font-semibold">My CV is available upon request — don&apos;t hesitate to 
           <Link href="mailto:daniel@d-smith.co.uk" target="_blank" className="hover:underline hover:underline-offset-4"
           >reach out</Link>!</p>
       </MainSection>
