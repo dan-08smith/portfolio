@@ -134,7 +134,7 @@ export default function Home() {
           <h4 className="text-lg md:text-2xl font-semibold mt-3">Computer Science Student at the University of York</h4>
 
           <div className="flex gap-x-10 mt-4">
-            <LinkIcons img="/icons/linkedin.svg" alt="LinkedIn Icon" href="https://www.linkedin.com/in/dansmith08/" text="Visit my LinkedIn" showArrow={true} />
+            <LinkIcons img="/icons/linkedin.svg" alt="LinkedIn Icon" href="https://www.linkedin.com/in/dansmith08/" text="Visit my LinkedIn" showArrow={true}/>
             <LinkIcons img="/icons/github.svg" alt="GitHub Icon" href="https://github.com/dan-08smith" text="Visit my GitHub" showArrow={true}/>
           </div>
 
