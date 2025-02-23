@@ -115,20 +115,34 @@ export default function Home() {
       <Navbar />    
 
       <section id="hero" className="relative h-screen">
-        <div className="absolute inset-0 z-40 flex flex-col justify-center items-start 
-          text-left text-white bg-black/30 px-10 md:px-20">
-          
-          <h6 className="text-sm md:text-lg font-semibold mb-3">Hello, I am</h6>
-          <h1 className="text-5xl md:text-7xl font-medium">Daniel Smith</h1>
-          <h4 className="text-lg md:text-2xl font-semibold mt-3">Computer Science Student at the University of York</h4>
-
-          <div className="flex flex-col sm:gap-10 sm:flex-row gap-4 mt-4">
-            <LinkIcons img="/icons/linkedin.svg" alt="LinkedIn Icon" href="https://www.linkedin.com/in/dansmith08/" text="Visit my LinkedIn" showArrow={true}/>
-            <LinkIcons img="/icons/github.svg" alt="GitHub Icon" href="https://github.com/dan-08smith" text="Visit my GitHub" showArrow={true}/>
+        <div className="absolute inset-0 z-40 bg-black/30 text-white">
+          <div className="max-w-screen-xl mx-auto h-full flex flex-col justify-center items-start px-10">
+            <h6 className="text-sm md:text-lg font-semibold mb-3">Hello, I am</h6>
+            <h1 className="text-5xl md:text-7xl font-medium">Daniel Smith</h1>
+            <h4 className="text-lg md:text-2xl font-semibold mt-3">
+              Computer Science Student at the University of York
+            </h4>
+            <div className="flex flex-col sm:gap-10 sm:flex-row gap-4 mt-4">
+              <LinkIcons
+                img="/icons/linkedin.svg"
+                alt="LinkedIn Icon"
+                href="https://www.linkedin.com/in/dansmith08/"
+                text="Visit my LinkedIn"
+                showArrow={true}
+              />
+              <LinkIcons
+                img="/icons/github.svg"
+                alt="GitHub Icon"
+                href="https://github.com/dan-08smith"
+                text="Visit my GitHub"
+                showArrow={true}
+              />
+            </div>
           </div>
-
         </div>
       </section>
+
+
 
       <MainSection id="about" title="About Me" subtitle="find out more">
         <p>
