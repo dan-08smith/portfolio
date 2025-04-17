@@ -24,11 +24,11 @@ export default function Navbar() {
 
                 <div className={`md:flex md:items-center md:justify-center w-full md:w-auto md:order-1 ${isOpen ? "block" : "hidden"}`} id="navbar-sticky">
                     <ul className="flex flex-col md:flex-row md:space-x-8 px-4 md:px-0 py-4 md:py-0 font-medium border border-gray-100 rounded-lg bg-gray-50 md:border-0 md:bg-white dark:bg-gray-800 md:dark:bg-gray-900 dark:border-gray-700">
-                        <li><Link href="/" className="block py-2 px-3 text-gray-900 rounded-sm hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:p-0 dark:text-white dark:hover:bg-gray-700 dark:hover:text-white">Home</Link></li>
-                        <li><Link href="/#about" className="block py-2 px-3 text-gray-900 rounded-sm hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:p-0 dark:text-white dark:hover:bg-gray-700 dark:hover:text-white">About</Link></li>
-                        <li><Link href="/#skills" className="block py-2 px-3 text-gray-900 rounded-sm hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:p-0 dark:text-white dark:hover:bg-gray-700 dark:hover:text-white">Skills</Link></li>
-                        <li><Link href="/#portfolio" className="block py-2 px-3 text-gray-900 rounded-sm hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:p-0 dark:text-white dark:hover:bg-gray-700 dark:hover:text-white">Portfolio</Link></li>
-                        <li><Link href="/#contact" className="block py-2 px-3 text-gray-900 rounded-sm hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:p-0 dark:text-white dark:hover:bg-gray-700 dark:hover:text-white">Contact</Link></li>
+                        <li><Link href="/" className="block py-2 px-3 text-gray-900 rounded-sm hover:bg-gray-100 md:hover:bg-transparent md:hover:text-orange-500 md:p-0 dark:text-white dark:hover:bg-gray-700 dark:hover:text-white">Home</Link></li>
+                        <li><Link href="/#about" className="block py-2 px-3 text-gray-900 rounded-sm hover:bg-gray-100 md:hover:bg-transparent md:hover:text-orange-500 md:p-0 dark:text-white dark:hover:bg-gray-700 dark:hover:text-white">About</Link></li>
+                        <li><Link href="/#skills" className="block py-2 px-3 text-gray-900 rounded-sm hover:bg-gray-100 md:hover:bg-transparent md:hover:text-orange-500 md:p-0 dark:text-white dark:hover:bg-gray-700 dark:hover:text-white">Skills</Link></li>
+                        <li><Link href="/#portfolio" className="block py-2 px-3 text-gray-900 rounded-sm hover:bg-gray-100 md:hover:bg-transparent md:hover:text-orange-500 md:p-0 dark:text-white dark:hover:bg-gray-700 dark:hover:text-white">Portfolio</Link></li>
+                        <li><Link href="/#contact" className="block py-2 px-3 text-gray-900 rounded-sm hover:bg-gray-100 md:hover:bg-transparent md:hover:text-orange-500 md:p-0 dark:text-white dark:hover:bg-gray-700 dark:hover:text-white">Contact</Link></li>
                     </ul>
                 </div>
             </div>

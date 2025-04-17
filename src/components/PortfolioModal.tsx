@@ -49,7 +49,7 @@ export default function PortfolioModal({ project, onClose }: PortfolioModalProps
                                 href={project.website1} 
                                 target="_blank" 
                                 rel="noopener noreferrer" 
-                                className="mt-4 flex items-center text-blue-500 hover:underline"
+                                className="mt-4 flex items-center text-orange-400 hover:underline"
                             >
                                 <Link className="w-5 h-5 mr-2" /> {project.website1name}
                             </a>
@@ -60,7 +60,7 @@ export default function PortfolioModal({ project, onClose }: PortfolioModalProps
                                 href={project.website2} 
                                 target="_blank" 
                                 rel="noopener noreferrer" 
-                                className="mt-2 flex items-center text-blue-500 hover:underline"
+                                className="mt-2 flex items-center text-orange-400 hover:underline"
                             >
                                 <Link className="w-5 h-5 mr-2" /> {project.website2name}
                             </a>

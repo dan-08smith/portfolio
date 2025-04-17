@@ -69,6 +69,16 @@ const projects: Project[] = [
       website1: "https://yorkcommunityconsulting.co.uk",
       website1name: "yorkcommunityconsulting.co.uk",
       technologies: ["Next.js", "React.js", "Google Firebase"],
+  },
+  {
+      halfTitle: "SCAIL Website",
+      halfDescription: "A website I am currently building for the Centre for Assuring Autonomy.",
+      title: "SCAIL",
+      description: "A description will be added shortly.",
+      image: "/img/placeholder.png",
+      website1: "https://scail.uk",
+      website1name: "scail.uk",
+      technologies: ["WordPress", "cPanel"]
   }
 ];
 
@@ -87,7 +97,7 @@ const SkillCircle = ({ name, level, isAnimated }: { name: string; level: number;
     <div className="relative w-24 h-24">
       <svg className="w-full h-full rotate-[-90deg]" viewBox="0 0 100 100">
         <circle className="text-gray-300" strokeWidth="10" stroke="currentColor" fill="transparent" r="40" cx="50" cy="50" />
-        <motion.circle className="text-blue-500" strokeWidth="10" stroke="currentColor" fill="transparent"
+        <motion.circle className="text-orange-400" strokeWidth="10" stroke="currentColor" fill="transparent"
           r="40" cx="50" cy="50" strokeDasharray="251.2"
           strokeDashoffset={isAnimated ? 251.2 - (251.2 * level) / 100 : 251.2}
           transition={{ duration: 1.5, ease: 'easeOut' }}
@@ -155,9 +165,9 @@ export default function Home() {
           Vercel, and Firebase. This website showcases some of my recent projects — feel free to explore!
         </p>
         <br/>
-        <p className="text-gray-600 font-semibold">My CV is available upon request — don&apos;t hesitate to 
+        <p className="text-gray-600 font-semibold">My CV is available upon request — don&apos;t hesitate to&nbsp;
           <Link href="mailto:daniel@d-smith.co.uk" target="_blank" className="hover:underline hover:underline-offset-4"
-          > reach out</Link>!</p>
+          >reach out</Link>!</p>
       </MainSection>
 
       <MainSection id="skills" title="Skills" subtitle="explore my">
@@ -190,14 +200,14 @@ export default function Home() {
           <Link href="mailto:daniel@d-smith.co.uk" target="_blank" className="flex-1">
             <div className="group flex flex-col items-center justify-center p-6 border rounded-lg shadow-md bg-white dark:bg-gray-800 hover:shadow-lg transition">
               <span className="text-2xl font-medium text-gray-900 dark:text-white">Email</span>
-              <span className="text-gray-500 dark:text-gray-400 group-hover:text-blue-500 transition">daniel@d-smith.co.uk</span>
+              <span className="text-gray-500 dark:text-gray-400 group-hover:text-orange-500 transition">daniel@d-smith.co.uk</span>
             </div>
           </Link>
 
           <Link href="https://www.linkedin.com/in/dansmith08/" target="_blank" className="flex-1">
             <div className="group flex flex-col items-center justify-center p-6 border rounded-lg shadow-md bg-white dark:bg-gray-800 hover:shadow-lg transition">
               <span className="text-2xl font-medium text-gray-900 dark:text-white">LinkedIn</span>
-              <span className="text-gray-500 dark:text-gray-400 group-hover:text-blue-500 transition">@dansmith08</span>
+              <span className="text-gray-500 dark:text-gray-400 group-hover:text-orange-500 transition">@dansmith08</span>
             </div>
           </Link>
 

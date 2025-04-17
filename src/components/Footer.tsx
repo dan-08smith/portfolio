@@ -93,8 +93,8 @@ export default function Footer() {
                                     (the source of the status below).
                                 </p>
                                 <a href="https://www.vercel-status.com" target="_blank" rel="noopener noreferrer"
-                                    className="flex justify-center items-center font-medium text-blue-600 dark:text-blue-500 
-                                        dark:hover:text-blue-600 hover:text-blue-700 hover:underline">
+                                    className="flex justify-center items-center font-medium text-orange-500 dark:text-blue-500 
+                                        dark:hover:text-blue-600 hover:text-orange-500 hover:underline">
                                     Status Page
                                     <svg className="w-2 h-2 ms-1.5 rtl:rotate-180" aria-hidden="true" 
                                         xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 6 10">
